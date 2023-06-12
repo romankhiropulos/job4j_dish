@@ -1,4 +1,8 @@
-insert into dish (name, description) values('Картошка по деревенски', 'Горячая');
-insert into dish (name, description) values('Рыба на углях', 'Речная');
-insert into dish (name, description) values('Макароны по флотски', 'Калорийные');
-insert into dish (name, description) values('Салат Московский', 'С крабами');
+INSERT INTO dish (name, description)
+VALUES ('Картошка по деревенски', 'Горячая');
+INSERT INTO dish (name, description)
+VALUES ('Рыба на углях', 'Речная');
+INSERT INTO dish (name, description)
+VALUES ('Макароны по флотски', 'Калорийные');
+INSERT INTO dish (name, description)
+VALUES ('Салат Московский', 'С крабами');

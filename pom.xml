@@ -29,9 +29,9 @@
             <id>production</id>
             <properties>
                 <liquibase.changeLogFile>db.changeLog.xml</liquibase.changeLogFile>
-                <liquibase.url>jdbc:postgresql://127.0.0.1:5432/job4j_dish</liquibase.url>
+                <liquibase.url>jdbc:postgresql://127.0.0.1:5432/dish</liquibase.url>
                 <liquibase.username>postgres</liquibase.username>
-                <liquibase.password>password</liquibase.password>
+                <liquibase.password>jenny</liquibase.password>
                 <start-class>com.lionmint.core.test.integration.apns.mock.MockAPNSServer</start-class>
             </properties>
         </profile>
@@ -41,7 +41,7 @@
                 <liquibase.changeLogFile>db.changeLog.xml</liquibase.changeLogFile>
                 <liquibase.url>${docker_db_url_jdbc}</liquibase.url>
                 <liquibase.username>postgres</liquibase.username>
-                <liquibase.password>password</liquibase.password>
+                <liquibase.password>jenny</liquibase.password>
             </properties>
         </profile>
     </profiles>
