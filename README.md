@@ -12,21 +12,20 @@
 
 ### Запуск проекта.
 
-1 Предварительно установим Docker compose1. Скачиваем пакет
-sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+#### 1) Предварительно установим Docker compose1. Скачиваем пакет
+###### sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-2 Выделяем права
-sudo chmod +x /usr/local/bin/docker-compose
+#### 2) Выделяем права
+###### sudo chmod +x /usr/local/bin/docker-compose
 
-3 Проверяем версию
-docker-compose --version Что бы запустить приложение через Docker Compose,
-необходимо в корень проекта добавить файлы docker-compose.yml с настройками
-(Он служит для того, что запустить систему, состоящую из нескольких контейнеров на одной машине.
-В нем мы указываем какие образы будут использованы, в каком порядке их запускать,
-что делать если контейнер упал, указываем какие настройки будут использованы для них и т.п.)
-и Dockerfile (файлы с настройками, используемый Docker server для создания образа.).
-В нашем случае их два, один для создания образа приложения, в котором в pom.xml файле
-лежат настройки Liquibase, второй файл для запуска Liquibase и скриптов.
-Заливаем проект с гита на виртуальную машину (git clone путь к репозиторию),
-переходим в папку с проектом cd job4j_dish, запускаем создание образов проекта
-(docker-compose build) и поднимаем образы docker-compose up
+#### 3) Скачиваем проект job4j_dish:
+###### git clone путь_к_репозиторию
+
+#### 4) Переходим в проект job4j_dish:
+###### cd job4j_dish
+
+#### 5) Запускаем команду сборки:
+###### docker-compose build
+
+#### 6) Запустим образ:
+###### docker-compose run job4j_dish
