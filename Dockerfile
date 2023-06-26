@@ -1,11 +1,12 @@
-FROM maven:3.6.3-openjdk-17
+# Этап 1 - сборка проекта в jar
+FROM maven:3.6.3-openjdk-17 AS maven
+ENV HOME=/usr/app
+RUN mkdir -p $HOME
+WORKDIR $HOME
+ADD . $HOME
+RUN mvn package
 
-RUN mkdir job4j_dish
-
-WORKDIR job4j_dish
-
-COPY . .
-
-RUN mvn package -Dmaven.test.skip
-
-CMD ["java", "-jar", "target/job4j_dish-0.0.1-SNAPSHOT.jar"]
+# Этап 2 - указание как запустить проект
+FROM openjdk:17-alpine
+COPY --from=maven /usr/app/target/job4j_dish-0.0.1-SNAPSHOT.jar /app/main.jar
+ENTRYPOINT java -jar /app/main.jar
